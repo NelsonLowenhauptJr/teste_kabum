@@ -1,7 +1,4 @@
-from math import prod
-from re import A
 from typing import List
-from zoneinfo import available_timezones
 from fastapi import FastAPI, status
 
 from database.models import ShippingMethods
@@ -35,7 +32,6 @@ class ProcessShippingMethods:
                                     "min_width": method.min_width,
                                     "max_width": method.max_width
                                     })
-        session.close()
 
         return shipping_methods
 
@@ -53,7 +49,7 @@ class ProcessShippingMethods:
 
     def creating_shipping(self):
 
-        final_shipping_methods_list: Shipping= []
+        final_shipping_methods_list: List[Shipping]= []
         if len(self.available_methods) <= 0:
             return final_shipping_methods_list
 
