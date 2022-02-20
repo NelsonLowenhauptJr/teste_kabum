@@ -5,18 +5,18 @@ Este repositório foi criado com base [neste teste](https://github.com/kabum/tes
 
 ## Requisitos:
  - Python >= 3.10
-   * Fastapi
-   * Uvicorn
-   * SQLAlchemy
-   * Psycpg2
-   * Typing
-   * Requests
-   * Pytest
+   - Fastapi
+   - Uvicorn
+   - SQLAlchemy
+   - Psycpg2
+   - Typing
+   - Requests
+   - Pytest
 
 ## Agradecimentos:
 Meus agradecimentos aos amigos que incetivaram, aconselharam e motivaram para que eu realizasse esse teste:
 
-- Osimito
+- Osmito
 - Prof. Kaoe
 - Rapha Pirata
 - Gustavão
