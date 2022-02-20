@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, Float, String
 from database.database import Base
 
-class Shipping_Methods(Base):
+class ShippingMethods(Base):
     __tablename__ = "shipping_methods"
 
     id = Column(Integer, primary_key=True, index=True)

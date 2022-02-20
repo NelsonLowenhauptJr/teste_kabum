@@ -9,7 +9,7 @@ client= TestClient(app)
 
 def test_root_status_code():
     '''
-    Checks if status code = 200 OK
+    status status code = (200 OK)?
     
     '''
     
@@ -19,7 +19,7 @@ def test_root_status_code():
 
 def test_root_message():
     '''
-    Checks if the welcome message is displayed
+    return message = (Bem vindo! Para mais informações acesse /docs)?
     '''
     
     response= client.get("/")
@@ -32,7 +32,7 @@ def test_root_message():
 
 def test_tdf_status_code_for_weight_zero():
     '''
-    POST weight must be major than zero
+    return status code = (422 Unprocessable Entity)? 
     '''
 
     data= {
@@ -54,7 +54,7 @@ def test_tdf_status_code_for_weight_zero():
 
 def test_tdf_status_code_case_1():
     '''
-    
+    return status code = (202 ACCEPTED)?
     '''
 
     data= {
@@ -76,7 +76,7 @@ def test_tdf_status_code_case_1():
 
 def test_tdf_returned_itens_case_1():
     '''
-    
+    return list itens = (2)?
     '''
 
     data= {
@@ -98,7 +98,8 @@ def test_tdf_returned_itens_case_1():
 
 def test_tdf_returned_message_case_1():
     '''
-    
+    return message = ([{"Entrega Ninja", 12, 6}, 
+                        {"Entrega KaBuM", 8, 4}])?
     '''
 
     data= {
@@ -113,12 +114,12 @@ def test_tdf_returned_message_case_1():
     message= [
             {
             "nome": "Entrega Ninja",
-            "valor_frete": "12.00",
+            "valor_frete": 12,
             "prazo_dias": 6
             },
             {
             "nome": "Entrega KaBuM",
-            "valor_frete": "8.00",
+            "valor_frete": 8,
             "prazo_dias": 4
             }
             ]
@@ -133,7 +134,7 @@ def test_tdf_returned_message_case_1():
 
 def test_tdf_status_code_case_2():
     '''
-    
+    return status code = (202 ACCEPTED)?
     '''
 
     data= {
@@ -155,7 +156,7 @@ def test_tdf_status_code_case_2():
 
 def test_tdf_returned_itens_case_2():
     '''
-    
+    return list itens = (1)?
     '''
 
     data= {
@@ -177,7 +178,7 @@ def test_tdf_returned_itens_case_2():
 
 def test_tdf_returned_message_case_2():
     '''
-    
+    return message = ([{"Entrega Ninja", 25.5, 6}])?
     '''
 
     data= {
@@ -192,7 +193,7 @@ def test_tdf_returned_message_case_2():
     message= [
            {
             "nome":"Entrega Ninja",
-            "valor_frete": "25.50",
+            "valor_frete": 25.5,
     	    "prazo_dias": 6
 	}
             ]
@@ -207,7 +208,7 @@ def test_tdf_returned_message_case_2():
 
 def test_tdf_status_code_case_3():
     '''
-    
+    return status code = (202 ACCEPTED)?
     '''
 
     data= {
@@ -229,7 +230,7 @@ def test_tdf_status_code_case_3():
 
 def test_tdf_returned_itens_case_3():
     '''
-    
+    return list itens = (0)?
     '''
 
     data= {
@@ -251,7 +252,7 @@ def test_tdf_returned_itens_case_3():
 
 def test_tdf_returned_message_case_3():
     '''
-    
+    return message = ([])?
     '''
 
     data= {

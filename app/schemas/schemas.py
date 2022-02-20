@@ -1,17 +1,17 @@
 from pydantic import BaseModel, Field
 
-class Product(BaseModel):
-
-    class Size(BaseModel):
+class Size(BaseModel):
         altura: float
         largura: float
-        
+
+class Product(BaseModel):
+   
     dimensao: Size
     peso: float= Field(gt=0)
 
 class Shipping(BaseModel):
     nome: str
-    valor_frete: str
+    valor_frete: float
     prazo_dias: int
 
     class Config:

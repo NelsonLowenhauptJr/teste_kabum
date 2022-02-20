@@ -2,7 +2,6 @@ from sqlalchemy import create_engine, Column, Integer, Float, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-#SQLALCHEMY_DATABASE= "postgresql://postgres:password@localhost/kabum_db"
 SQLALCHEMY_DATABASE="postgresql+psycopg2://postgres:password@localhost:5432/kabum_db"
 
 engine= create_engine(SQLALCHEMY_DATABASE, echo= True)
@@ -10,7 +9,7 @@ SessionLocal= sessionmaker(bind=engine)
 session= SessionLocal()
 Base= declarative_base()
 
-class Shipping_Methods(Base):
+class ShippingMethods(Base):
     __tablename__ = "shipping_methods"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -22,7 +21,7 @@ class Shipping_Methods(Base):
     min_width = Column(Float, nullable=False)
     max_width = Column(Float, nullable=False)
 
-shipping= [Shipping_Methods(
+shipping= [ShippingMethods(
                 name = "Entrega Ninja",
                 price_index = 0.3,
                 delivery_time = 6,
@@ -31,7 +30,7 @@ shipping= [Shipping_Methods(
                 min_width = 6,
                 max_width = 140
                 ),
-            Shipping_Methods(
+            ShippingMethods(
                 name = "Entrega KaBuM",
                 price_index = 0.2,
                 delivery_time = 4,
