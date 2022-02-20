@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+
+  db:
+    container_name: postgresql_db
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=kabum_db
+
+  app:
+    container_name: app
+    build: .
+    command: bash -c "uvicorn main:app --reload"
+    volumes:
+      - /app:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    restart: always
