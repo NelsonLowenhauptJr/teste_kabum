@@ -1,25 +1,7 @@
-from sqlalchemy import create_engine, Column, Integer, Float, String
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
+from models import Base, ShippingMethods
+from database import engine, get_session_local
 
-SQLALCHEMY_DATABASE="postgresql+psycopg2://postgres:password@localhost:5432/kabum_db"
-
-engine= create_engine(SQLALCHEMY_DATABASE, echo= True)
-SessionLocal= sessionmaker(bind=engine)
-session= SessionLocal()
-Base= declarative_base()
-
-class ShippingMethods(Base):
-    __tablename__ = "shipping_methods"
-
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(255), nullable=False, unique=True)
-    price_index = Column(Float, nullable=False)
-    delivery_time = Column(Integer, nullable=False)
-    min_height = Column(Float, nullable=False)
-    max_height = Column(Float, nullable=False)
-    min_width = Column(Float, nullable=False)
-    max_width = Column(Float, nullable=False)
+session= get_session_local()
 
 shipping= [ShippingMethods(
                 name = "Entrega Ninja",

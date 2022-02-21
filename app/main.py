@@ -1,9 +1,9 @@
 from typing import List
 from fastapi import FastAPI, status
 
-from database.models import ShippingMethods
-from database.database import get_session_local as SessionLocal
-from schemas.schemas import Product, Shipping
+from app.database.models import ShippingMethods
+from app.database.database import get_session_local as SessionLocal
+from app.schemas.schemas import Product, Shipping
 
 
 app= FastAPI(title="Teste Kabum", version=0.015)
@@ -89,4 +89,3 @@ def tipos_de_frete(produto:Product):
     shipping_methods= ProcessShippingMethods(produto)
 
     return shipping_methods.get_shipping_methods_list()
-

@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, Float, String
-from database.database import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+Base= declarative_base()
 
 class ShippingMethods(Base):
     __tablename__ = "shipping_methods"
