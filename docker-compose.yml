@@ -16,9 +16,9 @@ services:
   app:
     container_name: app
     build: .
-    command: bash -c "uvicorn main:app --reload"
+    command: bash -c "uvicorn app.main:app --reload"
     volumes:
-      - /app:/app
+      - .:/app
     ports:
       - 8000:8000
     depends_on:
