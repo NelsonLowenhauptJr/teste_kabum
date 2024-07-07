@@ -1,9 +1,9 @@
 from typing import List
 from fastapi import FastAPI, status
 
-from app.database.models import ShippingMethods
-from app.database.database import get_session_local as SessionLocal
-from app.schemas.schemas import Product, Shipping
+from database.models import ShippingMethods
+from database.database import get_session_local as SessionLocal
+from schemas.schemas import Product, Shipping
 
 
 app= FastAPI(title="Teste Kabum", version=0.015)
