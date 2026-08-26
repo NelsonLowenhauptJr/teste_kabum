@@ -1,13 +1,15 @@
 from typing import List
 from fastapi import FastAPI, status
 
-from database.models import ShippingMethods
-from database.database import get_session_local as SessionLocal
-from schemas.schemas import Product, Shipping
-
+from app.database.models import ShippingMethods
+from app.database.database import get_session_local as SessionLocal
+from app.schemas.schemas import Product, Shipping
+from app.database.create_database import seeder
 
 app= FastAPI(title="Teste Kabum", version=0.015)
 session= SessionLocal()
+
+#seeder()
 
 class ProcessShippingMethods:
    
@@ -52,8 +54,6 @@ class ProcessShippingMethods:
         final_shipping_methods_list: List[Shipping]= []
         if len(self.available_methods) <= 0:
             return final_shipping_methods_list
-
-        
 
         for i in range(len(self.available_methods)):
             
