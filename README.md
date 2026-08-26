@@ -1,24 +1,21 @@
 # Teste Kabum
 
-## Introdução:
-Este repositório foi criado com base [neste teste](https://github.com/kabum/testes-kabum/tree/master/Teste%20Back-End%201) de backend, da grande varejista de eletrônicos Kabum, que consiste basicamente em uma API que retorne opções de frete para o cliente de acordo com as informações inputadas.
+API em FastAPI criada originalmente como desafio técnico de backend em 2022.
 
-## Requisitos:
-- Python >= 3.10
-    - Fastapi
-    - Uvicorn
-    - SQLAlchemy
-    - Psycpg2
-    - Typing
-    - Requests
-    - Pytest
+O projeto calcula modalidades de frete disponíveis a partir das dimensões e peso de um produto, utilizando PostgreSQL e SQLAlchemy.
 
-## Agradecimentos:
-Meus agradecimentos aos amigos que incentivaram, aconselharam e motivaram para que eu realizasse esse teste:
+## Stack histórica
 
-- Osmito
-- Prof. Kaoe
-- Rapha Pirata
-- Gustavão
+- Python
+- FastAPI
+- Pydantic
+- SQLAlchemy
+- PostgreSQL
+- Pytest
+- Docker / Docker Compose
 
-Sem vocês eu ainda estaria brigando com o Hello World!
+## Preservação
+
+Este repositório mantém o histórico original do projeto. Em 2026 foi recuperado um working tree datado de 9 de junho de 2022, posterior ao último commit original de fevereiro de 2022. As alterações recuperadas foram preservadas em um commit de restauração histórica.
+
+Arquivos locais como `.env`, ambientes virtuais e caches Python não fazem parte do repositório.
