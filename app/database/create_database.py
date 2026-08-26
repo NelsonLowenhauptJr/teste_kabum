@@ -1,9 +1,12 @@
-from models import Base, ShippingMethods
-from database import engine, get_session_local
+from app.database.models import Base, ShippingMethods
+from app.database.database import get_session_local, engine
+from app.schemas.schemas import Product, Shipping
 
-session= get_session_local()
+def seeder():
 
-shipping= [ShippingMethods(
+    session= get_session_local()
+
+    shipping= [ShippingMethods(
                 name = "Entrega Ninja",
                 price_index = 0.3,
                 delivery_time = 6,
@@ -22,7 +25,7 @@ shipping= [ShippingMethods(
                 max_width = 125
                 )]
 
-Base.metadata.create_all(engine)
-session.add_all(shipping)
-session.commit()
-session.close()
+    Base.metadata.create_all(engine)
+    session.add_all(shipping)
+    session.commit()
+    session.close()
